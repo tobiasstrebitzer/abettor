@@ -107,8 +107,11 @@ Problems? Something just doesn't work?
 The `abettor` package is provided with absolutely no warranty. All `abettor` functions have been tested and should work, but they may not work as you think they do. Betting can be fun and profitable, but also risky. Be sensible and read the documentation. 
 
 ## Environment Variables
+
+```r
 Sys.setenv("betfair-betting" = "https://api.betfair.com/exchange/betting/json-rpc/v1")
 Sys.setenv("betfair-account" = "https://api.betfair.com/exchange/account/json-rpc/v1")
 Sys.setenv("betfair-login" = "https://identitysso.betfair.com/api/login")
 Sys.setenv("betfair-logout" = "https://identitysso.betfair.com/api/logout")
 Sys.setenv("betfair-keepalive" = "https://identitysso.betfair.com/api/keepAlive")
+```
