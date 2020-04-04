@@ -11,8 +11,8 @@ Description: An R package for connecting to the online betting exchange,
 Depends:
     R (>= 3.1.1)
 License: MIT + file LICENSE
-URL: https://github.com/phillc73/abettor
-BugReports: http://www.github.com/phillc73/abettor/issues
+URL: https://github.com/tobiasstrebitzer/abettor
+BugReports: http://www.github.com/tobiasstrebitzer/abettor/issues
 Maintainer: Phill Clarke <phill@starkingdom.co.uk>
 LazyData: true
 Imports:

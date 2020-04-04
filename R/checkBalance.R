@@ -60,7 +60,7 @@ checkBalance <- function(suppress = FALSE, sslVerify = TRUE) {
   token <- Sys.getenv('token')
 
   balance <- httr::content(
-    httr::POST(url = "https://api.betfair.com/exchange/account/json-rpc/v1",
+    httr::POST(url = Sys.getenv('betfair-account'),
                  config = httr::config(ssl_verifypeer = sslVerify),
                  body = balanceOps,
                  httr::add_headers(Accept = "application/json", `X-Application` = product, `X-Authentication` = token)

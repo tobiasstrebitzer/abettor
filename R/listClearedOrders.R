@@ -150,7 +150,7 @@ listClearedOrders <-
     token <- Sys.getenv('token')
 
     listOrder <- httr::content(
-      httr::POST(url = "https://api.betfair.com/exchange/betting/json-rpc/v1",
+      httr::POST(url = Sys.getenv('betfair-betting'),
                  config = httr::config(ssl_verifypeer = sslVerify),
                  body = listOrderOps,
                  httr::add_headers(Accept = "application/json", `X-Application` = product, `X-Authentication` = token)

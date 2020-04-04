@@ -205,7 +205,7 @@ listMarketTypes <-
     listMarketTypes <-
       as.list(jsonlite::fromJSON(
         RCurl::postForm(
-          "https://api.betfair.com/exchange/betting/json-rpc/v1", .opts = list(
+          Sys.getenv('betfair-betting'), .opts = list(
             postfields = listMarketTypesOps, httpheader = headers, ssl.verifypeer = sslVerify
           )
         )

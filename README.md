@@ -1,10 +1,10 @@
 abettor
 =======
-[![Build Status](https://travis-ci.org/phillc73/abettor.svg?branch=master)](https://travis-ci.org/phillc73/abettor)
+[![Build Status](https://travis-ci.org/tobiasstrebitzer/abettor.svg?branch=master)](https://travis-ci.org/tobiasstrebitzer/abettor)
 
 `abettor` is an R package for connecting to the online betting exchange Betfair, via their API-NG product, using JSON-RPC. The package can be used to retrieve market information, place bets, cancel bets and manage account information such as balance, statement and P&L.
 
-The breadth of API calls covered is growing, although not yet complete. If your use case is not yet covered, raise an [issue](https://github.com/phillc73/abettor/issues) or write new functionality yourself. New contributors always welcome.
+The breadth of API calls covered is growing, although not yet complete. If your use case is not yet covered, raise an [issue](https://github.com/tobiasstrebitzer/abettor/issues) or write new functionality yourself. New contributors always welcome.
 
 ## Quick start
 
@@ -14,14 +14,14 @@ Install from GitLab
 
 ```r
 # install.packages("devtools")
-devtools::install_git("https://gitlab.com/phillc73/abettor.git")
+devtools::install_git("https://gitlab.com/tobiasstrebitzer/abettor.git")
 library("abettor")
 ```
 Or install from GitHub if you prefer (identical mirror of GitLab)
 
 ```r
 # install.packages("devtools")
-devtools::install_github("phillc73/abettor")
+devtools::install_github("tobiasstrebitzer/abettor")
 library("abettor")
 ```
 
@@ -45,7 +45,7 @@ library("httr")
 ```
 ### Place a Bet Tutorial
 
-An initial tutorial describing how to place a bet with `abettor` is [available here](https://github.com/phillc73/abettor/blob/master/vignettes/abettor-placeBet.Rmd).
+An initial tutorial describing how to place a bet with `abettor` is [available here](https://github.com/tobiasstrebitzer/abettor/blob/master/vignettes/abettor-placeBet.Rmd).
 
 ## Supported Functions
 
@@ -79,13 +79,13 @@ This package is under active development.
 
 Current Version: 0.1.5
 
-See [current release notes](https://github.com/phillc73/abettor/releases) for more details.
+See [current release notes](https://github.com/tobiasstrebitzer/abettor/releases) for more details.
 
 ### Issues
 
 Problems? Something just doesn't work?
 
-[Submit issues here](https://github.com/phillc73/abettor/issues).
+[Submit issues here](https://github.com/tobiasstrebitzer/abettor/issues).
 
 ### To Do
 
@@ -105,3 +105,10 @@ Problems? Something just doesn't work?
 ## Disclaimer
 
 The `abettor` package is provided with absolutely no warranty. All `abettor` functions have been tested and should work, but they may not work as you think they do. Betting can be fun and profitable, but also risky. Be sensible and read the documentation. 
+
+## Environment Variables
+Sys.getenv('betfair-betting') <- "https://api.betfair.com/exchange/betting/json-rpc/v1"
+Sys.getenv('betfair-account') <- "https://api.betfair.com/exchange/account/json-rpc/v1"
+Sys.getenv('betfair-login') <- "https://identitysso.betfair.com/api/login"
+Sys.getenv('betfair-logout') <- "https://identitysso.betfair.com/api/logout"
+Sys.getenv('betfair-keepalive') <- "https://identitysso.betfair.com/api/keepAlive"

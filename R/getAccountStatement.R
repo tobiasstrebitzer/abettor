@@ -108,7 +108,7 @@ getAccountStatement <-
     accOrder <-
       jsonlite::fromJSON(
         RCurl::postForm(
-          "https://api.betfair.com/exchange/account/json-rpc/v1", .opts = list(
+          Sys.getenv('betfair-account'), .opts = list(
             postfields = getAccStatOps, httpheader = headers, ssl.verifypeer = sslVerify
           )
         )

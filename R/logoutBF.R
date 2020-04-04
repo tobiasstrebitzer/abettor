@@ -43,7 +43,7 @@
 #'
 
 logoutBF = function(suppress = TRUE, sslVerify = TRUE) {
-  #return(suppressWarnings(as.list(jsonlite::fromJSON(RCurl::postForm("https://identitysso.betfair.com/api/keepAlive", .opts=list(httpheader=headersPostLogin, ssl.verifypeer = sslVerify))))))
+  #return(suppressWarnings(as.list(jsonlite::fromJSON(RCurl::postForm(Sys.getenv('betfair-keepalive'), .opts=list(httpheader=headersPostLogin, ssl.verifypeer = sslVerify))))))
 
   # Read Environment variables for authorisation details
   product <- Sys.getenv('product')
@@ -57,14 +57,14 @@ logoutBF = function(suppress = TRUE, sslVerify = TRUE) {
     logout <-
       suppressWarnings(as.list(jsonlite::fromJSON(
         RCurl::postForm(
-          "https://identitysso.betfair.com/api/logout", .opts = list(httpheader =
+          Sys.getenv('betfair-logout'), .opts = list(httpheader =
                                                                        headers, ssl.verifypeer = sslVerify)
         )
       )))
   else
     (logout = as.list(jsonlite::fromJSON(
       RCurl::postForm(
-        "https://identitysso.betfair.com/api/logout", .opts = list(httpheader =
+        Sys.getenv('betfair-logout'), .opts = list(httpheader =
                                                                      headers, ssl.verifypeer = sslVerify)
       )
     )))
